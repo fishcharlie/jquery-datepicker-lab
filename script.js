@@ -4,6 +4,7 @@ var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 
 var curr_date = today.getDate();
 var curr_month = today.getMonth();
 var curr_year = today.getFullYear();
+var endDate;
 
 $("#todayDate").html(m_names[curr_month] + ". " + curr_date + ", " + curr_year);
 $("#datepicker").datepicker();
@@ -23,8 +24,13 @@ $("#datepicker").on("change", function(){
     $("#result").html(resultString);
 });
 
+// 16. Capture the input that is in the element with class ‘endDate’.  Save this as a variable
 
-// 16. STRETCH Challenges:
+$(".endDate").change(function () {
+    endDate = $(".endDate" ).val();
+});
+
+// 17. STRETCH Challenges:
 
 // For the highly ambitious, you may write a couple if statements and customize the result HTML string accordingly.
 // Here are the possibilities I've thought of; there may be more.
@@ -34,6 +40,3 @@ $("#datepicker").on("change", function(){
 // condition 4:  there is NO input but someone has selected a date in the past
 // condition 5:  there is NO input and the day is tomorrow
 // condition 6:  there is NO input and the date is in the future.
-
-
-
