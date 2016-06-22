@@ -4,6 +4,7 @@ var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 
 var curr_date = today.getDate();
 var curr_month = today.getMonth();
 var curr_year = today.getFullYear();
+var daysLeftText;
 
 $("#todayDate").html(m_names[curr_month] + ". " + curr_date + ", " + curr_year);
 $("#datepicker").datepicker();
@@ -17,7 +18,7 @@ function daysLeft() {
 // 13. You are almost there!
 // We need a variable where we can store the integer value difference of days and display that in a concatenated HTML string.
 // "You have ____ days left!"
-
+	daysLeftText="You have "+diffDays+" left!";
 }
 
 $("#datepicker").on("change", function(){
@@ -28,8 +29,10 @@ $("#datepicker").on("change", function(){
 
 // _____
 
+	$("#result").html(daysLeftText);
+
+
 });
 
 // UH-OH! We defined the variable inside daysLeft and we need the same data in our .on('change', function(){})
 // 15. Define the variable globally and leave your local variable references alone.
-
